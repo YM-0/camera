@@ -5,33 +5,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/idEditText"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/selectDateButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter ID"
-        android:inputType="text"
-        android:minHeight="48dp" />
+        android:text="Select date"/>
 
     <Button
         android:id="@+id/loadButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEditText"
+        android:layout_below="@id/selectDateButton"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:text="Load Image" />
+        android:text="Load Images" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <Button
+        android:id="@+id/loadLatestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/loadButton"
         android:layout_marginTop="16dp"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/image_desc"/>
+        android:layout_centerHorizontal="true"
+        android:text="Load Latest Image" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadLatestButton"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/imageLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
 
 </RelativeLayout>
