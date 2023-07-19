@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MainActivity</string>
+    <string name="image_desc">Image downloaded from server</string>
+</resources>
