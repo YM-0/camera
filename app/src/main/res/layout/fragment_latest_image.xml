@@ -1,27 +1,61 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageViewLatest"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/grey"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/loadLatestButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="最新画像取得"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Load Latest Image" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/autoLoadToggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loadLatestButton"
-        android:layout_marginTop="16dp">
-
-        <LinearLayout
-            android:id="@+id/imageLinearLayoutLatest"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/intervalEditText"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:hint="間隔(秒)"
+            android:inputType="number"
+            android:text="5"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    </ScrollView>
+        <TextView
+            android:id="@+id/unitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="秒" />
+    </LinearLayout>
 
-</RelativeLayout>
+    <ToggleButton
+        android:id="@+id/autoLoadToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="自動ロードOFF"
+        android:textOn="自動ロードON"
+        app:layout_constraintBottom_toTopOf="@id/loadLatestButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

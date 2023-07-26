@@ -1,37 +1,47 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/selectDateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Select date"/>
-
-    <Button
-        android:id="@+id/loadButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/selectDateButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Load Images" />
-
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/imageLinearLayoutDateSelected"
         android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/grey"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateSelectedLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loadButton"
-        android:layout_marginTop="16dp">
+        android:text="選択日時"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/imageLinearLayoutDateSelected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp" />
 
-        <LinearLayout
-            android:id="@+id/imageLinearLayoutDateSelected"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+    <TextView
+        android:id="@+id/dateSelectedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="選択されていません"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/dateSelectedLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
-    </ScrollView>
+    <Button
+        android:id="@+id/selectAndLoadButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:textSize="18sp"
+        android:text="日付を選択"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
